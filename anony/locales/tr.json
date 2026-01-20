@@ -67,7 +67,7 @@
     "radio_title": "Radyo Yayını",
     "play_downloading": "İndiriliyor...",
     "play_expired": "Bu butonun süresi doldu.",
-    "play_media": "🔊 | Yayın Başlatıldı\n\n• Başlık: <a href={0}>{1}</a>\n• Süre: {2}\n• İsteyen: {3}",
+    "play_media": "⟲ Yayın Başlatıldı |\n\n▶ Başlık : {1}\n▶ Süre : {2}\n▶ İsteyen : {3}",
     "play_unsupported": "Canlı yayınlar desteklenmiyor.",
     "restarting": "Yeniden başlatılıyor...",
     "back": "Geri",
@@ -104,3 +104,4 @@
     "voice_chat_invited": "👤 {inviter}, {invited} kişisini sesli sohbete davet etti.",
     "unknown_user": "Bilinmeyen"
 }
+
