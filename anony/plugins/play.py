@@ -49,7 +49,7 @@ async def play_hndlr(
 ) -> None:
     sent = await m.reply_text(m.lang["play_searching"])
     if m.command[0] in ["play", "oynat"] and config.PLAY_EMOJIS:
-        await m.reply_text(" ".join(config.PLAY_EMOJIS), quote=False)
+        await m.reply_text(random.choice(config.PLAY_EMOJIS), quote=False)
     file = None
     mention = m.from_user.mention
     media = tg.get_media(m.reply_to_message) if m.reply_to_message else None
