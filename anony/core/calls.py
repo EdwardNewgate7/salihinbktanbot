@@ -143,7 +143,13 @@ class TgCall(PyTgCalls):
 
 
     async def play_next(self, chat_id: int) -> None:
-        media = queue.get_next(chat_id)
+        loop_count = await db.get_loop(chat_id)
+        if loop_count > 0:
+            media = queue.get_current(chat_id)
+            if loop_count != 10:
+                await db.set_loop(chat_id, max(loop_count - 1, 0))
+        else:
+            media = queue.get_next(chat_id)
         try:
             if media.message_id:
                 await app.delete_messages(
