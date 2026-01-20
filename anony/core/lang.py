@@ -23,6 +23,7 @@ lang_codes = {
     "pa": "Punjabi",
     "pt": "Portuguese",
     "ru": "Russian",
+    "tr": "Turkish",
     "zh": "Chinese",
 }
 
