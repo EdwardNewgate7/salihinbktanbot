@@ -30,13 +30,16 @@ async def start(_, message: types.Message):
         return await _help(_, message)
 
     private = message.chat.type == enums.ChatType.PRIVATE
+    _lang = message.lang
+    if private:
+        _lang = lang.languages.get("tr", message.lang)
     _text = (
-        message.lang["start_pm"].format(message.from_user.first_name, app.name)
+        _lang["start_pm"].format(message.from_user.first_name, app.name)
         if private
         else message.lang["start_gp"].format(app.name)
     )
 
-    key = buttons.start_key(message.lang, private)
+    key = buttons.start_key(_lang, private)
     if private and config.START_VIDS:
         await message.reply_video(
             video=random.choice(config.START_VIDS),
@@ -48,11 +51,11 @@ async def start(_, message: types.Message):
         if config.HELP_IMG_URL:
             await message.reply_photo(
                 photo=config.HELP_IMG_URL,
-                caption=message.lang.get(
+                caption=_lang.get(
                     "start_pm_extra",
                     "Quick start: tap a button below to explore commands and features.",
                 ),
-                reply_markup=buttons.help_markup(message.lang),
+                reply_markup=buttons.help_markup(_lang),
             )
     else:
         await message.reply_photo(
