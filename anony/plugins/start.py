@@ -41,21 +41,29 @@ async def start(_, message: types.Message):
 
     key = buttons.start_key(_lang, private)
     if private and config.START_VIDS:
-        await message.reply_video(
-            video=random.choice(config.START_VIDS),
-            caption=_text,
-            reply_markup=key,
-        )
-        if config.STICKERS:
-            await message.reply_sticker(random.choice(config.STICKERS))
-        if config.HELP_IMG_URL:
+        try:
+            await message.reply_video(
+                video=random.choice(config.START_VIDS),
+                caption=_text,
+                reply_markup=key,
+            )
+            if config.STICKERS:
+                await message.reply_sticker(random.choice(config.STICKERS))
+            if config.HELP_IMG_URL:
+                await message.reply_photo(
+                    photo=config.HELP_IMG_URL,
+                    caption=_lang.get(
+                        "start_pm_extra",
+                        "Quick start: tap a button below to explore commands and features.",
+                    ),
+                    reply_markup=buttons.help_markup(_lang),
+                )
+        except Exception:
             await message.reply_photo(
-                photo=config.HELP_IMG_URL,
-                caption=_lang.get(
-                    "start_pm_extra",
-                    "Quick start: tap a button below to explore commands and features.",
-                ),
-                reply_markup=buttons.help_markup(_lang),
+                photo=config.START_IMG,
+                caption=_text,
+                reply_markup=key,
+                quote=not private,
             )
     else:
         await message.reply_photo(
@@ -106,4 +114,3 @@ async def _new_member(_, message: types.Message):
                 return
             await utils.send_log(message, True)
             await db.add_chat(message.chat.id)
-
