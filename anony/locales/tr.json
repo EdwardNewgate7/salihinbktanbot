@@ -151,6 +151,11 @@
     "zombie_done": "{0} silinmiş hesap kaldırıldı.",
     "uptime_text": "Uptime: {0}",
     "botinfo_text": "Bot: {0}\nSürüm: {1}\nKullanıcı: {2}\nSohbet: {3}",
+    "speed_panel": "Oynatma hızını seç:",
+    "speed_unsupported": "Hız kontrolü sadece indirilen parçalarda çalışır.",
+    "speed_changing": "Hız değiştiriliyor...",
+    "speed_changed": "Hız {0}x olarak ayarlandı: {1}",
+    "speed_failed": "Hız değiştirilemedi.",
     "tag_usage": "Kullanım: /tag <metin>",
     "tag_start": "Üyeler etiketleniyor...",
     "tag_done": "{0} kişi etiketlendi.",
@@ -174,3 +179,4 @@
     "voice_chat_invited": "👤 {inviter}, {invited} kişisini sesli sohbete davet etti.",
     "unknown_user": "Bilinmeyen"
 }
+
