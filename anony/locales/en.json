@@ -203,6 +203,11 @@
     "git_error": "Failed to fetch data: {0}",
     "git_failed": "Request failed.",
     "git_title": "GitHub Profile",
+    "groupinfo": "Title: {0}\nUsername: {1}\nID: {2}\nMembers: {3}",
+    "admins_list": "Admins:",
+    "admins_empty": "No admins found.",
+    "bots_list": "Bots:",
+    "bots_empty": "No bots found.",
     "tag_usage": "Usage: /tag <text>",
     "tag_start": "Tagging members...",
     "tag_done": "Tagged {0} members.",
@@ -216,4 +221,3 @@
     "help_7": "Stats",
     "help_8": "Sudoers"
 }
-
