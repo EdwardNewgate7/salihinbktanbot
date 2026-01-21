@@ -57,7 +57,7 @@ class Config:
 
         # Support
         self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sadistimki")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/prensesimu")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/fizygrup")
 
         # Playback / behavior
         self.AUTO_END = _env_bool("AUTO_END", False)
