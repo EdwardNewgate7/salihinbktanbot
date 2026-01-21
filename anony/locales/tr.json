@@ -214,6 +214,7 @@
     "tag_start": "Üyeler etiketleniyor...",
     "tag_done": "{0} kişi etiketlendi.",
     "start_pm": "Merhaba, {0} \nBen {1},\n\n┏━━━━━━━━━━━━━━━━━⧫\n┠ ◆ Özel özelliklere sahibim.\n┠ ◆ Hepsi bir arada bot.\n┗━━━━━━━━━━━━━━━━━⧫\n┏━━━━━━━━━━━━━━━━━⧫\n┠ ◆ Sesli sohbette şarkı çalabilirsin.\n┠ ◆ Görseller oluşturabilirsin.\n┠ ◆ Çok dilli çeviri yapabilirsin.\n┠ ◆ Sessize alma, ses açma, yasaklama, yasağı kaldırma, atma..\n┠ ◆ Özel karşılama \n┠ ◆ Daha fazla özellik için komutlar düğmesine tıkla...\n┗━━━━━━━━━━━━━━━━━⧫\n๏ Modüllerim ve komutlarım hakkında bilgi almak için yardım düğmesine tıklayın.\n\n🫧 Geliştirici 🪽 ➪ [Sertifikalı Kodlayıcı ✔︎](https://t.me/CertifiedCoder)",
+    "start_gp": "✨ Merhaba! Ben {0}\n\n🎵 Modern müzik asistanın.\n\n🚀 Şarkı çal, kuyruk yönet ve sesli sohbeti kolayca kontrol et.\n\n💡 Komutlar için /help yazabilirsin.",
     "start_pm_stats": "Merhaba, {0}\nBen {1}.\n\n⏱ Uptime: {2}\n👥 Kullanıcı: {3}\n💬 Sohbet: {4}\n\nKomutlar için aşağıdaki düğmeleri kullan.",
     "user_not_found": "Bir kullanıcı ID'si gerekli — ya da birinin mesajına yanıt verin.",
     "welcome_usage": "Kullanım: /welcome on | off",
