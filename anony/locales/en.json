@@ -214,6 +214,8 @@
     "zombie_clean": "Clean",
     "zombie_cleaning": "Cleaning deleted accounts...",
     "zombie_done": "Removed {0} deleted accounts.",
+    "uptime_text": "Uptime: {0}",
+    "botinfo_text": "Bot: {0}\nVersion: {1}\nUsers: {2}\nChats: {3}",
     "tag_usage": "Usage: /tag <text>",
     "tag_start": "Tagging members...",
     "tag_done": "Tagged {0} members.",
@@ -227,3 +229,4 @@
     "help_7": "Stats",
     "help_8": "Sudoers"
 }
+
