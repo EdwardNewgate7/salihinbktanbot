@@ -206,7 +206,7 @@ class MongoDB:
             self.cmd_delete.append(chat_id)
         else:
             if chat_id in self.cmd_delete:
-                self.cmd_delete.remove(chat_id)
+            self.cmd_delete.remove(chat_id)
         await self.chatsdb.update_one(
             {"_id": chat_id},
             {"$set": {"cmd_delete": delete}},
@@ -261,7 +261,7 @@ class MongoDB:
     async def get_lang(self, chat_id: int) -> str:
         if chat_id not in self.lang:
             doc = await self.langdb.find_one({"_id": chat_id})
-            self.lang[chat_id] = doc["lang"] if doc else "en"
+            self.lang[chat_id] = doc["lang"] if doc else "tr"
         return self.lang[chat_id]
 
     # LOGGER METHODS
@@ -424,3 +424,4 @@ class MongoDB:
         await self.get_auto_end()
         await self.get_auto_leave()
         logger.info("Database cache loaded.")
+
