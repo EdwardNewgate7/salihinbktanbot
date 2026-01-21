@@ -206,7 +206,7 @@ class MongoDB:
             self.cmd_delete.append(chat_id)
         else:
             if chat_id in self.cmd_delete:
-            self.cmd_delete.remove(chat_id)
+                self.cmd_delete.remove(chat_id)
         await self.chatsdb.update_one(
             {"_id": chat_id},
             {"$set": {"cmd_delete": delete}},
@@ -424,4 +424,3 @@ class MongoDB:
         await self.get_auto_end()
         await self.get_auto_leave()
         logger.info("Database cache loaded.")
-
