@@ -181,6 +181,8 @@
     "autoend_off": "Otomatik bitirme kapatıldı.",
     "autoleave_on": "Otomatik çıkış açıldı.",
     "autoleave_off": "Otomatik çıkış kapatıldı.",
+    "assistant_none": "Çalışan yardımcı bulunamadı.",
+    "assistant_title": "Aktif yardımcılar:",
     "tag_usage": "Kullanım: /tag <metin>",
     "tag_start": "Üyeler etiketleniyor...",
     "tag_done": "{0} kişi etiketlendi.",
@@ -204,4 +206,3 @@
     "voice_chat_invited": "👤 {inviter}, {invited} kişisini sesli sohbete davet etti.",
     "unknown_user": "Bilinmeyen"
 }
-
