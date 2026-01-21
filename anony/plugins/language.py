@@ -19,7 +19,6 @@ async def _lang(_, m: types.Message):
 
 @app.on_callback_query(filters.regex(r"^lang(?:_change|uage)") & ~app.bl_users)
 @lang.language()
-@admin_check
 async def _lang_cb(_, query: types.CallbackQuery):
     data = query.data.split()
     if data[0] == "language":
@@ -39,3 +38,4 @@ async def _lang_cb(_, query: types.CallbackQuery):
     await query.answer(query.lang["lang_change"].format(_lang), show_alert=True)
     await db.set_lang(query.message.chat.id, _lang)
     await query.edit_message_text(query.lang["lang_changed"].format(_lang))
+
