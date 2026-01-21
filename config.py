@@ -15,14 +15,14 @@ class Config:
         # Core
         self.API_ID = int(getenv("API_ID", "31939892"))
         self.API_HASH = getenv("API_HASH", "a7f3a115764c8c6eebba8b3cfdccc022")
-        self.BOT_TOKEN = getenv("BOT_TOKEN", ""8441056561:AAFhSeSQ49OoXZiuipYD-J94xjgjISd4KS0"")
-        self.MONGO_URL = getenv("MONGO_URL", "mongodb+srv://mongoguess:guessmongo@cluster0.zcwklzz.mongodb.net/?retryWrites=true&w=majority"") or getenv("MONGO_DB_URI")
+        self.BOT_TOKEN = getenv("BOT_TOKEN", "8441056561:AAFhSeSQ49OoXZiuipYD-J94xjgjISd4KS0")
+        self.MONGO_URL = getenv("MONGO_URL", "mongodb+srv://mongoguess:guessmongo@cluster0.zcwklzz.mongodb.net/?retryWrites=true&w=majority") or getenv("MONGO_DB_URI")
         self.LOGGER_ID = int(getenv("LOGGER_ID", "-1003639948579"))
         self.OWNER_ID = int(getenv("OWNER_ID", "8237345360"))
         self.OWNER_USERNAME = getenv("OWNER_USERNAME", "@gebermedim")
         self.BOT_USERNAME = getenv("BOT_USERNAME", "@FizyMusic_bot")
-        self.BOT_NAME = getenv("BOT_NAME", "Fizy Music")
-        self.ASSUSERNAME = getenv("ASSUSERNAME", "Fizy Assistant")
+        self.BOT_NAME = getenv("BOT_NAME", "FizyMusic")
+        self.ASSUSERNAME = getenv("ASSUSERNAME", "Fizy Asistan")
 
         # Limits
         self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
