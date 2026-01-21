@@ -196,6 +196,13 @@
     "link_no_access": "I don't have access to that chat.",
     "link_ready": "Group info for {0}",
     "link_failed": "Failed to fetch group info.",
+    "members_count": "Total members: {0}",
+    "git_usage": "Usage: /git <username>",
+    "git_not_found": "User not found.",
+    "git_rate": "Rate limit hit. Try again later.",
+    "git_error": "Failed to fetch data: {0}",
+    "git_failed": "Request failed.",
+    "git_title": "GitHub Profile",
     "tag_usage": "Usage: /tag <text>",
     "tag_start": "Tagging members...",
     "tag_done": "Tagged {0} members.",
@@ -209,3 +216,4 @@
     "help_7": "Stats",
     "help_8": "Sudoers"
 }
+
