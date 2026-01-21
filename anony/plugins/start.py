@@ -32,7 +32,7 @@ async def start(_, message: types.Message):
 
     private = message.chat.type == enums.ChatType.PRIVATE
     _lang = message.lang
-    if private:
+    if private or message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         _lang = lang.languages.get("tr", message.lang)
     if private:
         uptime = utils.format_eta(int(time.time() - boot))
@@ -46,7 +46,7 @@ async def start(_, message: types.Message):
             chats_count,
         )
     else:
-        _text = message.lang["start_gp"].format(app.name)
+        _text = _lang["start_gp"].format(app.name)
 
     key = buttons.start_key(_lang, private)
     if private and config.START_VIDS:
