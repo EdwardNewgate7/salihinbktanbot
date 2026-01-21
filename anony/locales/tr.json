@@ -144,6 +144,8 @@
     "zombie_clean": "Temizle",
     "zombie_cleaning": "Silinmiş hesaplar temizleniyor...",
     "zombie_done": "{0} silinmiş hesap kaldırıldı.",
+    "uptime_text": "Uptime: {0}",
+    "botinfo_text": "Bot: {0}\nSürüm: {1}\nKullanıcı: {2}\nSohbet: {3}",
     "tag_usage": "Kullanım: /tag <metin>",
     "tag_start": "Üyeler etiketleniyor...",
     "tag_done": "{0} kişi etiketlendi.",
