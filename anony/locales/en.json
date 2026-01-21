@@ -226,6 +226,11 @@
     "speed_changing": "Changing speed...",
     "speed_changed": "Speed set to {0}x by {1}.",
     "speed_failed": "Failed to change speed.",
+    "auto_usage": "Usage: /autoend on|off",
+    "autoend_on": "Auto end enabled.",
+    "autoend_off": "Auto end disabled.",
+    "autoleave_on": "Auto leave enabled.",
+    "autoleave_off": "Auto leave disabled.",
     "tag_usage": "Usage: /tag <text>",
     "tag_start": "Tagging members...",
     "tag_done": "Tagged {0} members.",
@@ -239,3 +244,4 @@
     "help_7": "Stats",
     "help_8": "Sudoers"
 }
+
