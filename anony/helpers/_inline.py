@@ -37,10 +37,10 @@ class Inline:
         if not remove:
             keyboard.append(
                 [
-                    self.ikb(text="▶", callback_data=f"controls resume {chat_id}"),
-                    self.ikb(text="⏸", callback_data=f"controls pause {chat_id}"),
-                    self.ikb(text="⟲", callback_data=f"controls replay {chat_id}"),
+                    self.ikb(text="⏮", callback_data=f"controls replay {chat_id}"),
+                    self.ikb(text="⏯", callback_data=f"controls pause {chat_id}"),
                     self.ikb(text="⏭", callback_data=f"controls skip {chat_id}"),
+                    self.ikb(text="🔁", callback_data=f"controls replay {chat_id}"),
                     self.ikb(text="⏹", callback_data=f"controls stop {chat_id}"),
                 ]
             )
@@ -138,24 +138,39 @@ class Inline:
     def start_key(
         self, lang: dict, private: bool = False
     ) -> types.InlineKeyboardMarkup:
+        if private:
+            rows = [
+                [
+                    self.ikb(
+                        text=lang.get("S_B_1", lang["add_me"]),
+                        url=f"https://t.me/{app.username}?startgroup=true",
+                    )
+                ],
+                [
+                    self.ikb(
+                        text=lang.get("S_B_7", lang.get("source", "Owner")),
+                        user_id=config.OWNER_ID,
+                    ),
+                    self.ikb(
+                        text=lang.get("S_B_4", lang["support"]),
+                        url=config.SUPPORT_CHAT,
+                    ),
+                ],
+                [self.ikb(text=lang.get("S_B_3", lang["help"]), callback_data="help")],
+            ]
+            return self.ikm(rows)
         rows = [
             [
                 self.ikb(
-                    text=f"➕ {lang['add_me']}",
+                    text=lang.get("S_B_1", lang["add_me"]),
                     url=f"https://t.me/{app.username}?startgroup=true",
-                )
-            ],
-            [
-                self.ikb(text=f"🧭 {lang['help']}", callback_data="help"),
-                self.ikb(text=f"🌐 {lang['language']}", callback_data="language"),
-            ],
-            [
-                self.ikb(text=f"🆘 {lang['support']}", url=config.SUPPORT_CHAT),
-                self.ikb(text=f"📣 {lang['channel']}", url=config.SUPPORT_CHANNEL),
-            ],
+                ),
+                self.ikb(
+                    text=lang.get("S_B_2", lang["channel"]),
+                    url=config.SUPPORT_CHANNEL,
+                ),
+            ]
         ]
-        if private:
-            return self.ikm(rows)
         return self.ikm(rows)
 
     def yt_key(self, link: str) -> types.InlineKeyboardMarkup:
@@ -167,3 +182,4 @@ class Inline:
                 ],
             ]
         )
+
