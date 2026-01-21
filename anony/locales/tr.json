@@ -171,6 +171,11 @@
     "unshort_usage": "Kullanım: /unshort https://bit.ly/example",
     "unshort_done": "Final URL:\n{0}",
     "unshort_failed": "Link çözülemedi.",
+    "movie_no_key": "TMDB API anahtarı eksik.",
+    "movie_usage": "Kullanım: /movie Inception",
+    "movie_search": "Film aranıyor...",
+    "movie_failed": "Film bilgisi alınamadı.",
+    "movie_not_found": "Film bulunamadı.",
     "auto_usage": "Kullanım: /autoend on|off",
     "autoend_on": "Otomatik bitirme açıldı.",
     "autoend_off": "Otomatik bitirme kapatıldı.",
@@ -199,3 +204,4 @@
     "voice_chat_invited": "👤 {inviter}, {invited} kişisini sesli sohbete davet etti.",
     "unknown_user": "Bilinmeyen"
 }
+
