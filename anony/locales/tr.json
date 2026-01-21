@@ -156,6 +156,11 @@
     "speed_changing": "Hız değiştiriliyor...",
     "speed_changed": "Hız {0}x olarak ayarlandı: {1}",
     "speed_failed": "Hız değiştirilemedi.",
+    "auto_usage": "Kullanım: /autoend on|off",
+    "autoend_on": "Otomatik bitirme açıldı.",
+    "autoend_off": "Otomatik bitirme kapatıldı.",
+    "autoleave_on": "Otomatik çıkış açıldı.",
+    "autoleave_off": "Otomatik çıkış kapatıldı.",
     "tag_usage": "Kullanım: /tag <metin>",
     "tag_start": "Üyeler etiketleniyor...",
     "tag_done": "{0} kişi etiketlendi.",
@@ -179,4 +184,3 @@
     "voice_chat_invited": "👤 {inviter}, {invited} kişisini sesli sohbete davet etti.",
     "unknown_user": "Bilinmeyen"
 }
-
