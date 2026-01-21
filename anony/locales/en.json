@@ -251,6 +251,8 @@
     "autoend_off": "Auto end disabled.",
     "autoleave_on": "Auto leave enabled.",
     "autoleave_off": "Auto leave disabled.",
+    "assistant_none": "No assistants are running.",
+    "assistant_title": "Active assistants:",
     "tag_usage": "Usage: /tag <text>",
     "tag_start": "Tagging members...",
     "tag_done": "Tagged {0} members.",
