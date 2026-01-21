@@ -12,33 +12,71 @@ def _env_bool(key: str, default: bool = False) -> bool:
 
 class Config:
     def __init__(self):
-        self.API_ID = int(getenv("API_ID", "31939892"))
-        self.API_HASH = getenv("API_HASH", "a7f3a115764c8c6eebba8b3cfdccc022")
+        self.API_ID = int(getenv("API_ID", 0))
+        self.API_HASH = getenv("API_HASH")
 
-        self.BOT_TOKEN = getenv("BOT_TOKEN", "8441056561:AAFhSeSQ49OoXZiuipYD-J94xjgjISd4KS0")
-        self.MONGO_URL = getenv("MONGO_URL", "mongodb+srv://mongoguess:guessmongo@cluster0.zcwklzz.mongodb.net/?retryWrites=true&w=majority")
+        self.BOT_TOKEN = getenv("BOT_TOKEN")
+        self.MONGO_URL = getenv("MONGO_URL") or getenv("MONGO_DB_URI")
 
-        self.LOGGER_ID = int(getenv("LOGGER_ID", "-1003639948579"))
-        self.OWNER_ID = int(getenv("OWNER_ID", "8237345360"))
+        self.LOGGER_ID = int(getenv("LOGGER_ID", 0))
+        self.OWNER_ID = int(getenv("OWNER_ID", 0))
+        self.OWNER_USERNAME = getenv("OWNER_USERNAME", "")
+        self.BOT_USERNAME = getenv("BOT_USERNAME", "")
+        self.BOT_NAME = getenv("BOT_NAME", "")
+        self.ASSUSERNAME = getenv("ASSUSERNAME", "")
 
-        self.DURATION_LIMIT = int(getenv("DURATION_LIMIT", 60)) * 60
+        self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
+        self.DURATION_LIMIT = self.DURATION_LIMIT_MIN * 60
         self.QUEUE_LIMIT = int(getenv("QUEUE_LIMIT", 20))
-        self.PLAYLIST_LIMIT = int(getenv("PLAYLIST_LIMIT", 20))
+        self.PLAYLIST_LIMIT = int(
+            getenv("PLAYLIST_LIMIT", getenv("PLAYLIST_FETCH_LIMIT", 20))
+        )
+        self.SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "1200"))
+        self.SONG_DOWNLOAD_DURATION_LIMIT = int(
+            getenv("SONG_DOWNLOAD_DURATION_LIMIT", "1800")
+        )
+        self.TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "157286400"))
+        self.TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1288490189"))
 
-        self.SESSION1 = getenv("SESSION1") or getenv("SESSION", "AQHnXTQAHgO1jteGgK7S2SJmZM8IC84bIo9uNqGkGjAnb0QvCkBYW_UleKgfauk3gKFdpLX0gR6V716d3OmCozBwdgBACmAzepeVU6FcAcpT9KzpQLgIDrY4YarwIlsaFyXSa1xgcO_4f9YV73eRug1W4_LK8zBKBI_x-i9qY_SuPiroy2pIYTxMSHDbFjPT2AypQm0YZTzLzXwOkUK1JEUNrp9PNdEyUvmORbg28P8oRKL0dbDEJQY-eCNmya0q8v1edezTaZHpFKQrZeCB14_5cNdmFGkgPW5ab-buiVYkrlJYqnksPd4FzpCOw7qBO6Ok8XtJ6smIK4bY-UlLMqnuoloLkwAAAAH00xWPAA")
-        self.SESSION2 = getenv("SESSION2", None)
-        self.SESSION3 = getenv("SESSION3", None)
+        self.SESSION1 = (
+            getenv("SESSION1")
+            or getenv("SESSION")
+            or getenv("STRING_SESSION")
+            or None
+        )
+        self.SESSION2 = getenv("SESSION2") or getenv("STRING_SESSION2", None)
+        self.SESSION3 = getenv("SESSION3") or getenv("STRING_SESSION3", None)
+        self.STRING4 = getenv("STRING_SESSION4")
+        self.STRING5 = getenv("STRING_SESSION5")
 
-        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sadistimki")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/fizygrup")
+        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/FallenAssociation")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/DevilsHeavenMF")
 
         self.AUTO_END = _env_bool("AUTO_END", False)
         self.AUTO_LEAVE = _env_bool("AUTO_LEAVE", False)
         self.VIDEO_PLAY = _env_bool("VIDEO_PLAY", True)
+        cookie_env = getenv("COOKIES_URL", "")
+        if not cookie_env:
+            cookie_env = getenv("COOKIE_URL", "")
         self.COOKIES_URL = [
-            url for url in getenv("COOKIES_URL", "https://batbin.me/stealthiness").split(" ")
+            url for url in cookie_env.split(" ")
             if url and "batbin.me" in url
         ]
+        if not self.COOKIES_URL and cookie_env:
+            self.COOKIES_URL = [cookie_env]
+        self.API_URL = getenv("API_URL")
+        self.VIDEO_API_URL = getenv("VIDEO_API_URL")
+        self.API_KEY = getenv("API_KEY")
+        self.DEEP_API = getenv("DEEP_API")
+        self.HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+        self.HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+        self.UPSTREAM_REPO = getenv(
+            "UPSTREAM_REPO", "https://github.com/CertifiedCoders/AnnieXMusic"
+        )
+        self.UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "Master")
+        self.GIT_TOKEN = getenv("GIT_TOKEN")
+        self.SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID")
+        self.SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET")
         self.DEFAULT_THUMB = getenv("DEFAULT_THUMB", "https://te.legra.ph/file/3e40a408286d4eda24191.jpg")
         self.PING_IMG = getenv("PING_IMG", "https://files.catbox.moe/haagg2.png")
         self.START_IMG = getenv("START_IMG", "https://files.catbox.moe/zvziwk.jpg")
