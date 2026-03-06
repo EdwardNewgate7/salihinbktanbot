@@ -19,7 +19,7 @@
     "dl_complete": "İndirme tamamlandı. Dosya işleniyor...\n\nGeçen süre: {0}s",
     "dl_cancelling": "Bekleyin, indirme iptal ediliyor!",
     "dl_active": "Bu dosya zaten indiriliyor. Biraz bekler misin?",
-    "dl_limit": "Dosya işlenemedi. Maksimum indirme limiti <b>200 MB</b>.",
+    "dl_limit": "Dosya işlenemedi. Maksimum indirme limiti <b>10 GB</b>.",
     "dl_progress": "<u><b>Dosya indiriliyor</b></u>\n\n<b>İlerleme:</b> {0} / {1} [{2:.1f}%]\n<b>Hız:</b> {3}/s | <b>ETA:</b> {4}",
     "dl_not_found": "İndirme zaten iptal edildi.",
     "error_no_audio": "Sonraki parçaya geçiliyor...\n\nDosyada ses kaynağı bulunamadı.",
