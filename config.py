@@ -25,21 +25,21 @@ class Config:
         self.ASSUSERNAME = getenv("ASSUSERNAME", "SessizMelodi Asistant")
 
         # Limits
-        self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
-        self.DURATION_LIMIT = self.DURATION_LIMIT_MIN * 320
+        self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 120))
+        self.DURATION_LIMIT = self.DURATION_LIMIT_MIN * 600
         self.QUEUE_LIMIT = int(getenv("QUEUE_LIMIT", 20))
         self.PLAYLIST_LIMIT = int(
-            getenv("PLAYLIST_LIMIT", getenv("PLAYLIST_FETCH_LIMIT", 20))
+            getenv("PLAYLIST_LIMIT", getenv("PLAYLIST_FETCH_LIMIT", 50))
         )
         self.SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "1200"))
         self.SONG_DOWNLOAD_DURATION_LIMIT = int(
             getenv("SONG_DOWNLOAD_DURATION_LIMIT", "1800")
         )
         self.TG_AUDIO_FILESIZE_LIMIT = int(
-            getenv("TG_AUDIO_FILESIZE_LIMIT", "157286400")
+            getenv("TG_AUDIO_FILESIZE_LIMIT", "10737418240")
         )
         self.TG_VIDEO_FILESIZE_LIMIT = int(
-            getenv("TG_VIDEO_FILESIZE_LIMIT", "1288490189")
+            getenv("TG_VIDEO_FILESIZE_LIMIT", "10737418240")
         )
 
         # Sessions
