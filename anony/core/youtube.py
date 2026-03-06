@@ -117,8 +117,10 @@ class YouTube:
             "overwrites": False,
             "nocheckcertificate": True,
             "retries": 3,
-            "fragment_retries": 3,
-            "socket_timeout": 15,
+            "fragment_retries": 10,
+            "socket_timeout": 60,
+            "continuedl": True,
+            "ignoreerrors": True,
         }
         if cookie:
             base_opts["cookiefile"] = cookie
@@ -136,6 +138,7 @@ class YouTube:
             formats = [
                 "bestaudio[ext=webm][acodec=opus]",
                 "bestaudio[ext=m4a]/bestaudio",
+                "bestaudio/best",
             ]
             ydl_opts_list = [{**base_opts, "format": f} for f in formats]
 
