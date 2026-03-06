@@ -43,7 +43,12 @@ class Telegram:
             await sent.edit_text(sent.lang["play_duration_limit"].format(config.DURATION_LIMIT // 60))
             return await sent.stop_propagation()
 
-        if file_size > 200 * 1024 * 1024:
+        if video:
+            limit = config.TG_VIDEO_FILESIZE_LIMIT
+        else:
+            limit = config.TG_AUDIO_FILESIZE_LIMIT
+
+        if file_size > limit:
             await sent.edit_text(sent.lang["dl_limit"])
             return await sent.stop_propagation()
 
