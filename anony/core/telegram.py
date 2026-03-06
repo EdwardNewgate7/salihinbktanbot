@@ -89,8 +89,6 @@ class Telegram:
                 )
                 self.active_tasks[msg_id] = task
                 await task
-                self.active.remove(file_id)
-                self.active_tasks.pop(msg_id, None)
                 await sent.edit_text(
                     sent.lang["dl_complete"].format(round(time.time() - start_time, 2))
                 )
@@ -110,6 +108,7 @@ class Telegram:
         finally:
             self.events.pop(msg_id, None)
             self.last_edit.pop(msg_id, None)
+            self.active_tasks.pop(msg_id, None)
             self.active = [f for f in self.active if f != file_id]
 
     async def cancel(self, query: types.CallbackQuery):
