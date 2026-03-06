@@ -25,8 +25,8 @@ class Config:
         self.ASSUSERNAME = getenv("ASSUSERNAME", "SessizMelodi Asistant").strip()
 
         # Limits
-        self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 1200)) # Default to 1200 minutes (20 hours)
-        self.DURATION_LIMIT = self.DURATION_LIMIT_MIN * 60 # Convert minutes to seconds
+        self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "1440")) # 24 hours
+        self.DURATION_LIMIT = self.DURATION_LIMIT_MIN * 60
         self.QUEUE_LIMIT = int(getenv("QUEUE_LIMIT", 20))
         self.PLAYLIST_LIMIT = int(
             getenv("PLAYLIST_LIMIT", getenv("PLAYLIST_FETCH_LIMIT", 50))
