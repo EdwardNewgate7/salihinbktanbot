@@ -14,15 +14,15 @@ class Config:
     def __init__(self):
         # Core
         self.API_ID = int(getenv("API_ID", "39772794"))
-        self.API_HASH = getenv("API_HASH", "2ee2ed0c08035c3264f864e5e12f37c7")
-        self.BOT_TOKEN = getenv("BOT_TOKEN", "8227251406:AAHzB02VRGFiV2VzXP51R5l95PozgxUbMqQ")
-        self.MONGO_URL = getenv("MONGO_URL", "mongodb+srv://mongoguess:guessmongo@cluster0.zcwklzz.mongodb.net/?retryWrites=true&w=majority") or getenv("MONGO_DB_URI")
+        self.API_HASH = getenv("API_HASH", "2ee2ed0c08035c3264f864e5e12f37c7").strip()
+        self.BOT_TOKEN = getenv("BOT_TOKEN", "8227251406:AAHzB02VRGFiV2VzXP51R5l95PozgxUbMqQ").strip()
+        self.MONGO_URL = (getenv("MONGO_URL", "mongodb+srv://mongoguess:guessmongo@cluster0.zcwklzz.mongodb.net/?retryWrites=true&w=majority") or getenv("MONGO_DB_URI")).strip()
         self.LOGGER_ID = int(getenv("LOGGER_ID", "-1003682183380"))
         self.OWNER_ID = int(getenv("OWNER_ID", "7932897819"))
-        self.OWNER_USERNAME = getenv("OWNER_USERNAME", "@Qu1iyef")
-        self.BOT_USERNAME = getenv("BOT_USERNAME", "@SessizMelodimuzik_bot")
-        self.BOT_NAME = getenv("BOT_NAME", "SessizMelodi")
-        self.ASSUSERNAME = getenv("ASSUSERNAME", "SessizMelodi Asistant")
+        self.OWNER_USERNAME = getenv("OWNER_USERNAME", "@Qu1iyef").strip()
+        self.BOT_USERNAME = getenv("BOT_USERNAME", "@SessizMelodimuzik_bot").strip()
+        self.BOT_NAME = getenv("BOT_NAME", "SessizMelodi").strip()
+        self.ASSUSERNAME = getenv("ASSUSERNAME", "SessizMelodi Asistant").strip()
 
         # Limits
         self.DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 120))
@@ -43,17 +43,17 @@ class Config:
         )
 
         # Sessions
-        self.SESSION1 = getenv("SESSION1", "AQJe4noAcLNyc-__knxmYnyVKW7yqIbjf5RDpEuNom1E7HWrW7kJlSdMobnUsQ9R-mXhMUW5mlJkpUjwKsygjKA6CZOmtxbiTe-KVUXVcEUcLvAFLH-ob12X1EBhAjYj9wlScylNIHfHMsko8QvbnD0coVubvU6q7BsTSNHG8AoK6ltY0h1bHWYJlzeebZxrMuyct0xNJnQoZLl_8Au8wNvduBDq_osTJinDbtO-3KM5VkwwApctp31UoqlVGMvkADlrK8FHJLYydq248hzRcTWGdsHNUkU1fHRIf7yyezQBJImeLRdFkz27EV_xylXsF6PBPjJmUv-XGcA0uyIvwmsFwnf6tgAAAAHacLhZAA ")
-        if not self.SESSION1:
-            self.SESSION1 = getenv("SESSION")
-        if not self.SESSION1:
-            self.SESSION1 = getenv("STRING_SESSION")
+        self.SESSION1 = getenv("SESSION1", "AQJe4noAcLNyc-__knxmYnyVKW7yqIbjf5RDpEuNom1E7HWrW7kJlSdMobnUsQ9R-mXhMUW5mlJkpUjwKsygjKA6CZOmtxbiTe-KVUXVcEUcLvAFLH-ob12X1EBhAjYj9wlScylNIHfHMsko8QvbnD0coVubvU6q7BsTSNHG8AoK6ltY0h1bHWYJlzeebZxrMuyct0xNJnQoZLl_8Au8wNvduBDq_osTJinDbtO-3KM5VkwwApctp31UoqlVGMvkADlrK8FHJLYydq248hzRcTWGdsHNUkU1fHRIf7yyezQBJImeLRdFkz27EV_xylXsF6PBPjJmUv-XGcA0uyIvwmsFwnf6tgAAAAHacLhZAA")
+        if self.SESSION1:
+            self.SESSION1 = self.SESSION1.strip()
+        else:
+            self.SESSION1 = (getenv("SESSION") or getenv("STRING_SESSION", "")).strip()
 
-        self.SESSION2 = getenv("SESSION2") or getenv("STRING_SESSION2")
-        self.SESSION3 = getenv("SESSION3") or getenv("STRING_SESSION3")
+        self.SESSION2 = (getenv("SESSION2") or getenv("STRING_SESSION2", "")).strip()
+        self.SESSION3 = (getenv("SESSION3") or getenv("STRING_SESSION3", "")).strip()
 
-        self.STRING4 = getenv("STRING_SESSION4")
-        self.STRING5 = getenv("STRING_SESSION5")
+        self.STRING4 = getenv("STRING_SESSION4", "").strip()
+        self.STRING5 = getenv("STRING_SESSION5", "").strip()
 
         # Support
         self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/dolubirkafa")
@@ -168,3 +168,4 @@ class Config:
             missing.append("SESSION1")
         if missing:
             raise SystemExit(f"Missing required environment variables: {', '.join(missing)}")
+
