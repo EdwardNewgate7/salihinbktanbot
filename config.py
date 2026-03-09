@@ -56,8 +56,8 @@ class Config:
         self.STRING5 = getenv("STRING_SESSION5", "").strip()
 
         # Support
-        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/dolubirkafa")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/SessizMelodim")
+        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://batbin.me/denumerative")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://batbin.me/denumerative")
 
         # Playback / behavior
         self.AUTO_END = _env_bool("AUTO_END", False)
