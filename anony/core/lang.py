@@ -28,6 +28,24 @@ lang_codes = {
 }
 
 
+class FallbackDict(dict):
+    def __init__(self, data: dict, fallback: dict):
+        super().__init__(data or {})
+        self._fallback = fallback or {}
+
+    def __getitem__(self, key):
+        if key in self:
+            return super().__getitem__(key)
+        if key in self._fallback:
+            return self._fallback[key]
+        return key
+
+    def get(self, key, default=None):
+        if key in self:
+            return super().get(key, default)
+        return self._fallback.get(key, default)
+
+
 class Language:
     """
     Language class for managing multilingual support using JSON language files.
@@ -39,11 +57,13 @@ class Language:
         self.languages = self.load_files()
 
     def load_files(self):
-        languages = {}
+        raw = {}
         lang_files = {file.stem: file for file in self.lang_dir.glob("*.json")}
         for lang_code, lang_file in lang_files.items():
             with open(lang_file, "r", encoding="utf-8") as file:
-                languages[lang_code] = json.load(file)
+                raw[lang_code] = json.load(file)
+        fallback = raw.get("en", {})
+        languages = {code: FallbackDict(data, fallback) for code, data in raw.items()}
         logger.info(f"Loaded languages: {', '.join(languages.keys())}")
         return languages
 
